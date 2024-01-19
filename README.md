@@ -36,27 +36,25 @@
   </a></p>
 </div>
 
-## 关于
+## About
 
-**Privacy Guides** 是一个社区驱动的网站，提供保护您的数据安全和隐私的信息。我们的使命是告知公众数字隐私的价值和监控您在线活动的政府行为。我们是一个完全由志愿团队成员和贡献者运营的非营利性集体。我们的网站没有广告，且与任何列出的提供商无关。
+**Privacy Guides** is a socially motivated website that provides information for protecting your data security and privacy. Our mission is to inform the public about the value of digital privacy, and global government initiatives which aim to monitor your online activity. We are a non-profit collective operated entirely by volunteer team members and contributors. Our website is free of advertisements and not affiliated with any of the listed providers.
 
-团队当前成员列表可以在[这里](https://www.privacyguides.org/about/#our-team)找到。此外，[许多人](https://github.com/privacyguides/privacyguides.org/graphs/contributors)对该项目做出了贡献，您也可以！
+The current list of team members can be found [here](https://www.privacyguides.org/about/#our-team). Additionally, [many people](https://github.com/privacyguides/privacyguides.org/graphs/contributors) have made contributions to the project, and you can too!
 
 *特别报道：[Tweakers](https://tweakers.net/reviews/10568/op-zoek-naar-privacyvriendelijke-tools-niek-de-wilde-van-privacy-guides.html)，[纽约时报](https://www.nytimes.com/wirecutter/guides/online-security-social-media-privacy/) 和 [Wired](https://www.wired.com/story/firefox-mozilla-2022/)*
 
 ## 贡献
 
-- 💬 [开始讨论或提出想法](https://discuss.privacyguides.net/)
-- 💖 [赞助项目](https://github.com/sponsors/privacyguides)
-- 🈴 [帮助翻译网站](https://crowdin.com/project/privacyguides) [[Matrix 聊天](https://matrix.to/#/#pg-i18n:aragon.sh)]
-- 📝 编辑网站，本
+- 💬 [Start a discussion or suggest an idea](https://discuss.privacyguides.net/)
+- 💖 [Sponsor the project](https://github.com/sponsors/privacyguides)
+- 🈴 [Help translate the site](https://crowdin.com/project/privacyguides) [[Matrix chat](https://matrix.to/#/#pg-i18n:aragon.sh)]
+- 📝 Edit the site, everything's accessible in this repo
+  - Browse our [open issues](https://github.com/privacyguides/privacyguides.org/issues) to see what needs to be updated
+  - View the list of [approved topics waiting for a PR](https://discuss.privacyguides.net/tag/approved)
+  - Read some writing tips in our [style guide](https://www.privacyguides.org/en/meta/writing-style/)
 
-存储库中的所有内容都可访问
-  - 浏览我们的[开放问题](https://github.com/privacyguides/privacyguides.org/issues)以查看需要更新的内容
-  - 查看[等待 PR 的批准话题列表](https://discuss.privacyguides.net/tag/approved)
-  - 阅读我们的[风格指南](https://www.privacyguides.org/en/meta/writing-style/)中的一些写作提示
-
-所有对网站的贡献者都列在[这里](https://github.com/privacyguides/privacyguides.org/graphs/contributors)。如果您对项目做出了实质性（即有版权资格）的贡献，并希望正式获得认可，您可以在[`CITATION.cff`](/CITATION.cff)的适当`authors`部分包括您的信息，只需提交 PR 或要求 @jonaharagon 进行更改即可。
+All contributors to the site are listed [here](https://github.com/privacyguides/privacyguides.org/graphs/contributors). If you make a substantial (i.e. copyright eligible) contribution to the project and would like to be formally credited, you are welcome to include your information in the appropriate `authors` section in [`CITATION.cff`](/CITATION.cff) as well, just submit a PR or ask @jonaharagon to make the change.
 
 ## 镜像
 
@@ -92,19 +90,17 @@ Privacy Guides 的内容在 [Creative Commons Attribution-NoDerivatives 4.0 Inte
 
 **团队成员**应直接克隆带有 `mkdocs-material-insiders` 的存储库。这种方法与生产环境相同：
 
-1. 克隆此存储库及子模
+1. Clone this repository and submodules: `git clone --recurse-submodules https://github.com/privacyguides/privacyguides.org.git`
+2. Enable SSH commit verification with our local [`.allowed_signers`](/.allowed_signers) file: `git config gpg.ssh.allowedSignersFile .allowed_signers`
+3. Install Python **3.8**, this is the only version supported by Netlify
+4. Install **pipenv**: `pip install pipenv`
+5. Install dependencies: `pipenv install --dev` (install [Pillow and CairoSVG](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#dependencies) as well to generate social cards)
+6. Serve the site locally: `pipenv run mkdocs serve --config-file config/mkdocs.en.yml` (set `CARDS=true` to generate social cards)
+    - The site will be available at `http://localhost:8000`
+    - You can build the site locally with `pipenv run mkdocs build --config-file config/mkdocs.en.yml`
+    - This version of the site should be identical to the live, production version
 
-块：`git clone --recurse-submodules https://github.com/privacyguides/privacyguides.org.git`
-2. 使用我们本地的 [`.allowed_signers`](/.allowed_signers) 文件启用 SSH 提交验证：`git config gpg.ssh.allowedSignersFile .allowed_signers`
-3. 安装 Python **3.8**，这是 Netlify 支持的唯一版本
-4. 安装 **pipenv**：`pip install pipenv`
-5. 安装依赖：`pipenv install --dev`（安装 [Pillow 和 CairoSVG](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#dependencies) 以生成社交卡片）
-6. 在本地提供网站：`pipenv run mkdocs serve --config-file config/mkdocs.en.yml`（设置 `CARDS=true` 以生成社交卡片）
-   - 网站将在 `http://localhost:8000` 上可用
-   - 您可以使用 `pipenv run mkdocs build --config-file config/mkdocs.en.yml` 在本地构建网站
-   - 这个版本的网站应该与实时、生产版本相同
-
-如果您使用 SSH 密钥签名的提交提交到 `main`，您应该将您的 SSH 密钥添加到此仓库中的 [`.allowed_signers`](/.allowed_signers)。
+If you commit to `main` with commits signed with your SSH key, you should add your SSH key to [`.allowed_signers`](/.allowed_signers) in this repo.
 
 ### 本地翻译站点构建
 
